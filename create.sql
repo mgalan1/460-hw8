@@ -1,6 +1,6 @@
 --Create
 create table Member (
-	EmailAddress  	varchar2(20) primary key,
+	EmailAddress  	varchar2(50) primary key,
 	Name	    	varchar2(20) not null,
 	SelfIntroduction varchar2(50),
 	Location		varchar2(50) not null,
@@ -11,7 +11,7 @@ create table Member (
 );
 
 create table Pet (
-	EmailAddress  	varchar2(20) references Member(EmailAddress),
+	EmailAddress  	varchar2(50) references Member(EmailAddress),
 	Name			varchar2(10),
 	Birthday		date,
 	IsSterilized	varchar2(1) check(IsSterilized in ('y', 'n')),
@@ -22,8 +22,8 @@ create table Pet (
 );
 
 create table Favorite (
-	EmailAddressMember	varchar2(20),
-	EmailAddressPet		varchar2(20),
+	EmailAddressMember	varchar2(50),
+	EmailAddressPet		varchar2(50),
 	PetName				varchar2(10),
 	Birthday			date,
 	constraint PK_Favorite primary key(EmailAddressMember, EmailAddressPet, PetName, Birthday),
