@@ -7,7 +7,8 @@ create table Member (
 	Birthday		date not null,
 	IsAdopter		varchar2(1) check(IsAdopter in ('y', 'n')) not null,
 	IsSender		varchar2(1) check(IsSender in ('y', 'n')) not null,
-	AdoptingExperience varchar2(50)
+	AdoptingExperience varchar2(50),
+	constraint adoptExp check(IsAdopter = 'n' or AdoptingExperience is not null)
 );
 
 create table Pet (
@@ -18,7 +19,9 @@ create table Pet (
 	Breed			varchar2(7) check(Breed in ('Cat', 'Dog', 'Rabbit')) not null,
 	DaysWalk		number(3) check (DaysWalk > 0),
 	BiteWire		varchar2(1) check(BiteWire in ('y', 'n')),
-	constraint PK_Pet primary key(EmailAddress, Name, Birthday)
+	constraint PK_Pet primary key(EmailAddress, Name, Birthday),
+	constraint dogWalks check(Breed != 'Dog' or DaysWalk is not null),
+    	constraint rabbitBites check(Breed != 'Rabbit' or BiteWire is not null)
 );
 
 create table Favorite (
