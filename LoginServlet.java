@@ -51,25 +51,25 @@ public class LoginServlet extends HttpServlet
                 out.println("<hr");
                 out.println("<br><br>");
 
-				// TODO: THIS NEEDS TO GO
-                out.println("<form name=\"findall\" action=../../../examples/jsp/MerchandiseReportSummary.jsp>");
-                	out.println("<input type=submit name=\"findallsubmit\" value=\"Show All Merchandise\">");
+				
+                out.println("<form name=\"findallpet\" action=../../../examples/jsp/MainPage.jsp>");
+                	out.println("<input type=submit name=\"findallpetsubmit\" value=\"Show All Pets\">");
  				out.println("</form>");
 
                 out.println("<br>");
 
-				// TODO: THIS NEEDS TO GO
-                out.println("<form name=\"advancedfind\" action=FindMerchandiseServlet method=get>");
-                	out.println("<input type=submit name=\"Adsearch\" value=\"Advanced Search\">");
- 				out.println("</form>");
+				// // TODO: THIS NEEDS TO GO
+                // out.println("<form name=\"advancedfind\" action=FindMerchandiseServlet method=get>");
+                // 	out.println("<input type=submit name=\"Adsearch\" value=\"Advanced Search\">");
+ 				// out.println("</form>");
 
-                out.println("<br>");
-				// TODO: THIS NEEDS TO GO
-                out.println("<form name=\"addMerchandise\" action=AddMerchandiseServlet method=get>");
-					out.println("<input type=submit name=\"Adsearch\" value=\"Add Merchandise\">");
-				out.println("</form>");
+                // out.println("<br>");
+				// // TODO: THIS NEEDS TO GO
+                // out.println("<form name=\"addMerchandise\" action=AddMerchandiseServlet method=get>");
+				// 	out.println("<input type=submit name=\"Adsearch\" value=\"Add Merchandise\">");
+				// out.println("</form>");
 
-                out.println("<br>");
+                // out.println("<br>");
 
                 out.println("<form name=\"logout\" action=index.html>");
                 	out.println("<input type=submit name=\"logoutPA\" value=\"Logout\">");
@@ -184,10 +184,6 @@ public class LoginServlet extends HttpServlet
 				HttpSession session = request.getSession();
 				session.setAttribute("email" , ""+emailVal[0]);
 				session.setAttribute("loginPW" , ""+pwVal[0]);
-
-
-
-			}
 			
 				//Now query the database to see if this user exists......
 				try{
