@@ -12,14 +12,14 @@ create table Member (
 );
 
 create table Pet (
-	EmailAddress  	varchar2(50) references Member(EmailAddress),
-	Name			varchar2(10),
-	Birthday		date,
+	OwnerEmailAddress  	varchar2(50) references Member(EmailAddress),
+	PetName			varchar2(10),
+	PetBirthday		date,
 	IsSterilized	varchar2(1) check(IsSterilized in ('y', 'n')),
 	Breed			varchar2(7) check(Breed in ('Cat', 'Dog', 'Rabbit')) not null,
 	DaysWalk		number(3) check (DaysWalk > 0),
 	BiteWire		varchar2(1) check(BiteWire in ('y', 'n')),
-	constraint PK_Pet primary key(EmailAddress, Name, Birthday),
+	constraint PK_Pet primary key(OwnerEmailAddress, PetName, PetBirthday),
 	constraint dogWalks check(Breed != 'Dog' or DaysWalk is not null),
     	constraint rabbitBites check(Breed != 'Rabbit' or BiteWire is not null)
 );
@@ -27,9 +27,9 @@ create table Pet (
 create table Favorite (
 	EmailAddressMember	varchar2(50),
 	EmailAddressPet		varchar2(50),
-	PetName				varchar2(10),
-	Birthday			date,
-	constraint PK_Favorite primary key(EmailAddressMember, EmailAddressPet, PetName, Birthday),
+	FavPetName				varchar2(10),
+	FavPetBirthday			date,
+	constraint PK_Favorite primary key(EmailAddressMember, EmailAddressPet, FavPetName, FavPetBirthday),
 	constraint FK1_Favorite foreign key(EmailAddressMember) references Member(EmailAddress),
-	constraint FK2_Favorite	foreign key(EmailAddressPet, PetName, Birthday) references Pet(EmailAddress, Name, Birthday)
+	constraint FK2_Favorite	foreign key(EmailAddressPet, FavPetName, FavPetBirthday) references Pet(OwnerEmailAddress, PetName, PetBirthday)
 );

@@ -16,4 +16,6 @@ insert into Favorite values('student2@email.arizona.edu', 'student2@email.arizon
 insert into Favorite values('student3@email.arizona.edu', 'student3@email.arizona.edu', 'Harry', '01-MAR-19');
 insert into Favorite values('student4@email.arizona.edu', 'student4@email.arizona.edu', 'Isabel', '01-APR-19');
 insert into Favorite values('student5@email.arizona.edu', 'student5@email.arizona.edu', 'Jack', '01-MAY-19');
+insert into Favorite values('student1@email.arizona.edu', 'student4@email.arizona.edu', 'Isabel', '01-APR-19');
+insert into Favorite values('student1@email.arizona.edu', 'student5@email.arizona.edu', 'Jack', '01-MAY-19');
 
