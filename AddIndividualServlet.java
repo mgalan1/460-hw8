@@ -3,8 +3,6 @@ import java.util.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-//import UACATS.servlets.*;
-//import UACATS.utils.*;
 import java.sql.*;
 
 public class AddIndividualServlet extends HttpServlet{
@@ -48,7 +46,7 @@ public class AddIndividualServlet extends HttpServlet{
 		 out.println(" <br>");
 
 
-		 out.println("<form name=\"register\" action = addNM()>");
+		 //out.println("<form name=\"register\" action = addNM()>");
 		 out.println("<b>Name*		</b>");
 		 out.println("<input type=text name=\"name\"><br><br>");
  
@@ -76,10 +74,10 @@ public class AddIndividualServlet extends HttpServlet{
 		 out.println("</html>");
 	 }
 	 
-	 public void addNM(HttpServletRequest req, HttpServletResponse res)) {
-		 String name = req.getName();
-		 
-	 }
+	 // This function causes errors at compile time
+	//  public void addNM(HttpServletRequest req, HttpServletResponse res) {
+	// 	 String name = req.getName();
+	//  }
 	
 
 }
